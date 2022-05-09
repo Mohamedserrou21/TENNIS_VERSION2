@@ -1,0 +1,63 @@
+﻿@model IEnumerable<TENNIS_APP.Models.Rencontre>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<br />
+<br />
+<br />
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.date_tournoi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.score)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tournoi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ID_Gagant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PERDANT)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.date_tournoi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.score)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tournoi.nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_Gagant)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PERDANT.nom)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

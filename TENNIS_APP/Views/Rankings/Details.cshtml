@@ -1,0 +1,38 @@
+﻿@model TENNIS_APP.Models.Ranking
+
+@{
+    ViewData["Title"] = "Details";
+}
+<br />
+<br />
+<br />
+<h1>Details</h1>
+
+<div>
+    <h4>Ranking</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.score)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.score)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rank)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rank)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RANK_PLAYER)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RANK_PLAYER)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

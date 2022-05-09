@@ -1,0 +1,39 @@
+﻿@model TENNIS_APP.Models.Sponsor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<br />
+<br />
+<br />
+<h1>Details</h1>
+
+<div>
+    <h4>Sponsor</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.nom)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.nom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.adress)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.adress)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.chiffre_daffaire)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.chiffre_daffaire)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

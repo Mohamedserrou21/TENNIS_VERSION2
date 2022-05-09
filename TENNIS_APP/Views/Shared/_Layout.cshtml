@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - ATP  WORLD TOUR</title>
+    @*<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />*@
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/js/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("ATP WORLD", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Joueurs" asp-action="Index">Joueurs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Rencontres" asp-action="Index">Rencontre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:50869/">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Sponsors" asp-action="Index">Sponsor</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Rankings" asp-action="Index">Gestion-Rankings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Subventions" asp-action="Index">Subvention</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Tournois" asp-action="Index">Tournois</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Gains" asp-action="Index">Gains</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="RANKController2" asp-action="Index">Classement</a>
+                    </li>
+                    >
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+          
+        </footer>
+    </div>
+
+    <script src="~/js/jquery-1.10.2.min.js"></script>
+    <script src="~/js/bootstrap.js"></script>
+    @RenderSection("Scripts", false)
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿@model TENNIS_APP.Models.Gain
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<br />
+<br />
+<br />
+
+<h1>Edit</h1>
+
+<h4>Gain</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="ID_JOUEUR" class="control-label"></label>
+                <select asp-for="ID_JOUEUR" class="form-control" asp-items="ViewBag.ID_JOUEUR"></select>
+                <span asp-validation-for="ID_JOUEUR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nom_SPONSOR" class="control-label"></label>
+                <select asp-for="Nom_SPONSOR" class="form-control" asp-items="ViewBag.Nom_SPONSOR"></select>
+                <span asp-validation-for="Nom_SPONSOR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="prime" class="control-label"></label>
+                <input asp-for="prime" class="form-control" />
+                <span asp-validation-for="prime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ANNEE" class="control-label"></label>
+                <select asp-for="ANNEE" class="form-control" asp-items="ViewBag.ANNEE"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

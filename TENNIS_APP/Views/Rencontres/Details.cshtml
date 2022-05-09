@@ -1,0 +1,50 @@
+﻿@model TENNIS_APP.Models.Rencontre
+
+@{
+    ViewData["Title"] = "Details";
+}
+<br />
+<br />
+<br />
+<h1>Details</h1>
+
+<div>
+    <h4>Rencontre</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.date_tournoi)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.date_tournoi)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.score)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.score)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.tournoi)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.tournoi.nom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ID_Gagant)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ID_Gagant)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PERDANT)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PERDANT.nom)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

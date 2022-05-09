@@ -1,0 +1,206 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(90deg,rgba(0,0,0,0.8) 0 50%,rgba(0,0,0,0.2)),url("pizza-img.jpg");
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 5%;
+    height: 80PX;
+}
+
+    header .logo h1 {
+        color: #fff;
+        font-size: 40px;
+    }
+
+        header .logo h1 span {
+            color: #ff7800;
+        }
+
+    header .menu {
+        display: flex;
+    }
+
+        header .menu li {
+            list-style: none;
+            margin: 0 10px;
+        }
+
+            header .menu li a {
+                color: #fff;
+                text-decoration: 0;
+                position: relative;
+                text-transform: uppercase;
+            }
+
+                header .menu li a::before {
+                    content: '';
+                    position: absolute;
+                    bottom: -3px;
+                    width: 0;
+                    height: 4px;
+                    background-color: #ff7800;
+                    transition: 0.5s;
+                    border-radius: 10px;
+                }
+
+                header .menu li a:hover::before {
+                    width: 100%;
+                }
+
+.infos {
+    margin: 0 5%;
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+    .infos .pizza-info h1 {
+        color: #fff;
+        font-size: 35px;
+        text-transform: uppercase;
+        padding-bottom: 10px;
+    }
+
+    .infos .pizza-info {
+        height: fit-content;
+        width: 50%;
+    }
+
+        .infos .pizza-info p {
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .infos .pizza-info a {
+            color: #fff;
+            background-color: #ff7800;
+            text-decoration: 0;
+            padding: 8px 10px;
+            width: fit-content;
+            transition: 0.5s;
+        }
+
+            .infos .pizza-info a:hover {
+                letter-spacing: 1px;
+            }
+
+.reseaux ul li {
+    list-style: none;
+    margin: 25px 0;
+}
+
+    .reseaux ul li a i {
+        font-size: 35px;
+        color: #fff;
+        transition: 0.5s;
+    }
+
+    .reseaux ul li a:hover i {
+        transform: scale(2.3);
+    }
+/*Responsive*/
+@media(max-width:808px) {
+    body {
+        background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("pizza-img.jpg");
+        background-position: center;
+        background-size: cover;
+        height: fit-content;
+    }
+
+    header .menu {
+        display: none;
+    }
+
+        header .menu.responsive {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 1;
+        }
+
+        header .menu li {
+            margin: 25px 0;
+        }
+
+    .infos .pizza-info {
+        width: 80%;
+    }
+
+        .infos .pizza-info h1 {
+            font-size: 25px;
+        }
+
+        .infos .pizza-info p {
+            font-size: 14px;
+        }
+
+    .infos .reseaux ul li a i {
+        font-size: 25px;
+    }
+
+    .menu-toggle {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 2;
+        transition: 0.5s;
+    }
+
+        .menu-toggle::before {
+            content: '';
+            position: absolute;
+            width: 28px;
+            height: 2px;
+            background-color: #ff7800;
+            box-shadow: 0 10px 0 #ff7800;
+            transform: translateY(-10px);
+            transition: 0.5s;
+        }
+
+        .menu-toggle.active::before {
+            box-shadow: 0 0 0 #ff7800;
+            transform: translateY(0) rotate(405deg);
+        }
+
+        .menu-toggle::after {
+            content: '';
+            position: absolute;
+            width: 28px;
+            height: 2px;
+            background-color: #ff7800;
+            transform: translateY(10px);
+            transition: 0.5s;
+        }
+
+        .menu-toggle.active::after {
+            transform: translateY(0) rotate(-405deg);
+        }
+}
